@@ -87,7 +87,10 @@
       const sections = App.$.sections;
       if (btns.length && sections.length > 0) {
         for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", App.smoothScrollTo.bind(this, i, btns));
+          btns[i].addEventListener(
+            "click",
+            App.smoothScrollTo.bind(this, i, btns)
+          );
         }
       }
     },
@@ -146,10 +149,14 @@
 
         if (i !== 1 && i !== 4) {
           type = "line";
-          dataType = App.stats.getGeneratedLineData(App.stats.randomArray(30, 1000));
+          dataType = App.stats.getGeneratedLineData(
+            App.stats.randomArray(30, 1000)
+          );
         } else {
           type = "bar";
-          dataType = App.stats.getGeneratedBarData(App.stats.randomArray(30, 1000));
+          dataType = App.stats.getGeneratedBarData(
+            App.stats.randomArray(30, 1000)
+          );
         }
 
         new Chart(ctx, {
